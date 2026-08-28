@@ -1,0 +1,1305 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    overflow: hidden;
+
+    color: white;
+
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.background {
+
+    position: fixed;
+
+    width: 100%;
+
+    height: 100%;
+
+    background:
+
+    linear-gradient(
+        -45deg,
+        #ff0844,
+        #ffb199,
+        #833ab4,
+        #fd1d1d,
+        #fcaf45
+    );
+
+    background-size: 400% 400%;
+
+    animation:
+        gradientMove 12s ease infinite;
+
+    z-index: -2;
+
+}
+
+
+@keyframes gradientMove {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+
+
+/* =========================
+   LOADER
+========================= */
+
+#loader {
+
+    position: fixed;
+
+    width: 100%;
+
+    height: 100vh;
+
+    background: #120018;
+
+    z-index: 10000;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.loader-heart {
+
+    font-size: 80px;
+
+    animation:
+        heartbeat 1s infinite;
+
+}
+
+
+.loading-bar {
+
+    width: 250px;
+
+    height: 8px;
+
+    background: #333;
+
+    border-radius: 20px;
+
+    margin-top: 20px;
+
+    overflow: hidden;
+
+}
+
+
+.loading-progress {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: white;
+
+    animation:
+        loading 3s forwards;
+
+}
+
+
+@keyframes loading {
+
+    to {
+        width: 100%;
+    }
+
+}
+
+
+
+/* =========================
+   PAGES
+========================= */
+
+.page {
+
+    display: none;
+
+    width: 100%;
+
+    height: 100vh;
+
+    padding: 20px;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+}
+
+
+.page.active {
+
+    display: flex;
+
+    animation:
+        pageEnter 1s ease;
+
+}
+
+
+@keyframes pageEnter {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.8)
+            rotateY(20deg);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotateY(0);
+
+    }
+
+}
+
+
+
+/* =========================
+   HOME
+========================= */
+
+.hero {
+
+    max-width: 800px;
+
+}
+
+
+.cake {
+
+    font-size: 130px;
+
+    animation:
+        cakeFloat 3s ease-in-out infinite;
+
+}
+
+
+.candle {
+
+    font-size: 45px;
+
+    animation:
+        candle 0.3s infinite alternate;
+
+}
+
+
+@keyframes cakeFloat {
+
+    0%, 100% {
+
+        transform:
+            translateY(0)
+            rotate(-3deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-25px)
+            rotate(3deg);
+
+    }
+
+}
+
+
+@keyframes candle {
+
+    from {
+        transform: rotate(-8deg);
+    }
+
+    to {
+        transform: rotate(8deg);
+    }
+
+}
+
+
+.main-title {
+
+    font-size: 65px;
+
+    margin: 20px;
+
+    text-shadow:
+
+        0 0 20px white,
+        0 0 40px #ff4da6;
+
+}
+
+
+.main-title strong {
+
+    font-size: 35px;
+
+}
+
+
+.subtitle {
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+
+    border: none;
+
+    padding: 16px 35px;
+
+    margin: 15px;
+
+    border-radius: 50px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+
+    box-shadow:
+
+        0 10px 30px
+        rgba(0,0,0,0.3);
+
+}
+
+
+button:hover {
+
+    transform:
+
+        scale(1.1)
+        translateY(-5px);
+
+}
+
+
+.magic-button {
+
+    animation:
+        buttonGlow 2s infinite;
+
+}
+
+
+@keyframes buttonGlow {
+
+    0%, 100% {
+
+        box-shadow:
+        0 0 10px white;
+
+    }
+
+    50% {
+
+        box-shadow:
+        0 0 40px white,
+        0 0 70px #ff4da6;
+
+    }
+
+}
+
+
+
+/* =========================
+   WISH CARD
+========================= */
+
+.wish-container {
+
+    width: 100%;
+
+    max-width: 650px;
+
+}
+
+
+.wish-card {
+
+    background:
+
+        rgba(255,255,255,0.95);
+
+    color: #333;
+
+    padding: 50px;
+
+    border-radius: 35px;
+
+    box-shadow:
+
+        0 20px 60px
+        rgba(0,0,0,0.3);
+
+}
+
+
+.wish-emoji {
+
+    font-size: 90px;
+
+    animation:
+        heartbeat 1.5s infinite;
+
+}
+
+
+.wish-card h2 {
+
+    color: #ff2d75;
+
+    font-size: 35px;
+
+    margin: 20px;
+
+}
+
+
+.wish-card p {
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    min-height: 100px;
+
+}
+
+
+.progress {
+
+    width: 100%;
+
+    height: 8px;
+
+    background: #ddd;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+}
+
+
+#progressBar {
+
+    height: 100%;
+
+    width: 20%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff0844,
+            #ff4da6
+        );
+
+    transition: 0.5s;
+
+}
+
+
+
+/* =========================
+   GIFT BOX
+========================= */
+
+.gift-box {
+
+    position: relative;
+
+    width: 180px;
+
+    height: 150px;
+
+    margin: 50px auto;
+
+    cursor: pointer;
+
+    animation:
+        giftFloat 2s infinite;
+
+}
+
+
+.gift-body {
+
+    width: 180px;
+
+    height: 130px;
+
+    background: #ff1744;
+
+    border-radius: 10px;
+
+}
+
+
+.gift-lid {
+
+    position: absolute;
+
+    width: 200px;
+
+    height: 40px;
+
+    background: #ff4569;
+
+    left: -10px;
+
+    top: -35px;
+
+    border-radius: 10px;
+
+    transition: 1s;
+
+}
+
+
+.gift-ribbon {
+
+    position: absolute;
+
+    width: 30px;
+
+    height: 130px;
+
+    background: gold;
+
+    left: 75px;
+
+    top: 0;
+
+}
+
+
+.gift-box.open .gift-lid {
+
+    transform:
+        rotate(-30deg)
+        translate(-70px,-80px);
+
+}
+
+
+@keyframes giftFloat {
+
+    0%, 100% {
+
+        transform:
+        translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+        translateY(-20px);
+
+    }
+
+}
+
+
+.gift-message {
+
+    display: none;
+
+    max-width: 600px;
+
+    background:
+        rgba(255,255,255,0.9);
+
+    color: #333;
+
+    padding: 35px;
+
+    border-radius: 30px;
+
+}
+
+
+.gift-message.show {
+
+    display: block;
+
+    animation:
+        pageEnter 1s ease;
+
+}
+
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+
+    display: grid;
+
+    grid-template-columns:
+
+        repeat(2, 220px);
+
+    gap: 25px;
+
+    justify-content: center;
+
+    margin: 30px;
+
+}
+
+
+.memory-card {
+
+    height: 250px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    transition: 0.5s;
+
+    animation:
+        cardFloat 4s infinite ease-in-out;
+
+}
+
+
+.memory-card:nth-child(2) {
+
+    animation-delay: 0.5s;
+
+}
+
+
+.memory-card:nth-child(3) {
+
+    animation-delay: 1s;
+
+}
+
+
+.memory-card:nth-child(4) {
+
+    animation-delay: 1.5s;
+
+}
+
+
+.memory-card:hover {
+
+    transform:
+
+        scale(1.1)
+        rotate(3deg);
+
+}
+
+
+.memory-card img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.memory-card span {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    padding: 15px;
+
+    background:
+
+        rgba(0,0,0,0.5);
+
+}
+
+
+@keyframes cardFloat {
+
+    0%, 100% {
+
+        transform:
+        translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+        translateY(-15px);
+
+    }
+
+}
+
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final-container {
+
+    max-width: 750px;
+
+}
+
+
+.final-heart {
+
+    font-size: 120px;
+
+    animation:
+        heartbeat 1s infinite;
+
+}
+
+
+.final-message {
+
+    background:
+
+        rgba(255,255,255,0.9);
+
+    color: #333;
+
+    padding: 40px;
+
+    border-radius: 35px;
+
+    margin: 30px;
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+}
+
+
+.final-message h2 {
+
+    color: #ff2d75;
+
+}
+
+
+@keyframes heartbeat {
+
+    0%, 100% {
+
+        transform:
+        scale(1);
+
+    }
+
+    50% {
+
+        transform:
+        scale(1.2);
+
+    }
+
+}
+
+
+
+/* =========================
+   HEARTS
+========================= */
+
+.heart {
+
+    position: fixed;
+
+    bottom: -50px;
+
+    animation:
+        floatHeart linear forwards;
+
+    pointer-events: none;
+
+}
+
+
+@keyframes floatHeart {
+
+    to {
+
+        transform:
+
+        translateY(-110vh)
+        rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+
+/* PARTICLES */
+
+.particle {
+
+    position: fixed;
+
+    width: 5px;
+
+    height: 5px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    animation:
+        particleMove linear infinite;
+
+}
+
+
+@keyframes particleMove {
+
+    from {
+
+        transform:
+        translateY(100vh);
+
+    }
+
+    to {
+
+        transform:
+        translateY(-100vh);
+
+    }
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width: 600px) {
+
+    .main-title {
+
+        font-size: 42px;
+
+    }
+
+    .main-title strong {
+
+        font-size: 25px;
+
+    }
+
+    .cake {
+
+        font-size: 100px;
+
+    }
+
+    .gallery {
+
+        grid-template-columns:
+
+            repeat(2, 140px);
+
+    }
+
+    .memory-card {
+
+        height: 180px;
+
+    }
+
+    .wish-card {
+
+        padding: 30px 20px;
+
+    }
+
+}
+
+/* =========================
+   FINAL KISS EFFECT
+========================= */
+
+.final-container {
+    position: relative;
+}
+
+
+.kiss-effect {
+
+    font-size: 30px;
+
+    position: absolute;
+
+    left: 50%;
+    top: 40%;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0);
+
+    opacity: 0;
+
+    z-index: 10;
+
+}
+
+
+.kiss-effect.show {
+
+    animation:
+        giantKiss 2.5s ease forwards;
+
+}
+
+
+@keyframes giantKiss {
+
+    0% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(0)
+            rotate(-30deg);
+
+        opacity: 0;
+
+    }
+
+
+    30% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(8)
+            rotate(10deg);
+
+        opacity: 1;
+
+    }
+
+
+    60% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(12)
+            rotate(-10deg);
+
+        opacity: 1;
+
+    }
+
+
+    100% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(18)
+            rotate(20deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+
+/* =========================
+   BIRTHDAY MESSAGE REVEAL
+========================= */
+
+.birthday-reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(40px);
+
+    transition: 1s;
+
+}
+
+
+.birthday-reveal.show {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.birthday-reveal h1 {
+
+    font-size: 60px;
+
+    text-shadow:
+
+        0 0 10px white,
+        0 0 30px #ff4da6,
+        0 0 60px #ff4da6;
+
+}
+
+
+.birthday-reveal p {
+
+    font-size: 22px;
+
+}
+
+
+
+/* =========================
+   BIG CAKE
+========================= */
+
+.big-cake-container {
+
+    position: relative;
+
+    margin: 30px auto;
+
+    opacity: 0;
+
+    transform:
+        scale(0)
+        translateY(100px);
+
+}
+
+
+.big-cake-container.show {
+
+    animation:
+        cakeReveal 2s
+        cubic-bezier(.17,.67,.32,1.5)
+        forwards;
+
+}
+
+
+.cake-emoji {
+
+    font-size: 220px;
+
+    position: relative;
+
+    z-index: 2;
+
+    animation:
+        cakeBounce 2s
+        infinite ease-in-out;
+
+}
+
+
+.cake-candle {
+
+    font-size: 60px;
+
+    position: absolute;
+
+    top: -10px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 3;
+
+    animation:
+        flameMove 0.4s
+        infinite alternate;
+
+}
+
+
+.cake-glow {
+
+    position: absolute;
+
+    width: 250px;
+
+    height: 250px;
+
+    border-radius: 50%;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.9),
+            rgba(255,77,166,0.3),
+            transparent 70%
+        );
+
+    animation:
+        glowPulse 2s infinite;
+
+}
+
+
+@keyframes cakeReveal {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(0)
+            translateY(200px)
+            rotate(-30deg);
+
+    }
+
+
+    70% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.2)
+            translateY(-20px)
+            rotate(10deg);
+
+    }
+
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0)
+            rotate(0);
+
+    }
+
+}
+
+
+@keyframes cakeBounce {
+
+    0%, 100% {
+
+        transform:
+            translateY(0)
+            rotate(-2deg);
+
+    }
+
+
+    50% {
+
+        transform:
+            translateY(-20px)
+            rotate(2deg);
+
+    }
+
+}
+
+
+@keyframes flameMove {
+
+    from {
+
+        transform:
+            translateX(-50%)
+            rotate(-10deg);
+
+    }
+
+    to {
+
+        transform:
+            translateX(-50%)
+            rotate(10deg);
+
+    }
+
+}
+
+
+@keyframes glowPulse {
+
+    0%, 100% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+        opacity: 0.6;
+
+    }
+
+
+    50% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.4);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+
+/* =========================
+   CAKE MESSAGE
+========================= */
+
+.cake-message {
+
+    opacity: 0;
+
+    transform:
+        translateY(40px);
+
+    transition: 1s;
+
+}
+
+
+.cake-message.show {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+.cake-message h2 {
+
+    font-size: 35px;
+
+    color: white;
+
+    text-shadow:
+        0 0 20px #ff4da6;
+
+}
+
+
+@media(max-width: 600px) {
+
+    .cake-emoji {
+        font-size: 150px;
+    }
+
+    .cake-candle {
+        font-size: 45px;
+    }
+
+    .birthday-reveal h1 {
+        font-size: 38px;
+    }
+
+}
